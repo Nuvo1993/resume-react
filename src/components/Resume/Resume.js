@@ -78,8 +78,7 @@ export default function Resume() {
             flexWrap: "wrap",
             "& > :not(style)": {
               m: 1,
-              width: 300,
-              height: 700,
+              width: 300
             },
           }}
         >
@@ -147,24 +146,58 @@ export default function Resume() {
           Work History
         </Typography>
         <Timeline position="alternate">
-          {workHistory.map((job, index) => (
-            <TimelineItem key={index}>
-              <TimelineSeparator>
-                <TimelineDot />
-                {index !== workHistory.length - 1 && <TimelineConnector />}
-              </TimelineSeparator>
-              <TimelineContent>
-                <Typography variant="subtitle1" component="span">
-                  {job.company}
-                </Typography>
-                <Typography variant="body2">{job.position}</Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {job.duration}
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-          ))}
-        </Timeline>
+      <TimelineItem>
+        <TimelineOppositeContent>
+          <Typography variant="body2" color="textSecondary">
+            2019 - 2021
+          </Typography>
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>
+          <Paper elevation={3}>
+            <Typography variant="h6" component="h1">
+              Software Developer
+            </Typography>
+            <Typography>Company A</Typography>
+            <Typography>
+              - Developed web applications using React and Node.js
+              <br />
+              - Collaborated with cross-functional teams
+            </Typography>
+          </Paper>
+        </TimelineContent>
+      </TimelineItem>
+
+      <TimelineItem>
+        <TimelineOppositeContent>
+          <Typography variant="body2" color="textSecondary">
+            2017 - 2019
+          </Typography>
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>
+          <Paper elevation={3}>
+            <Typography variant="h6" component="h1">
+              Junior Developer
+            </Typography>
+            <Typography>Company B</Typography>
+            <Typography>
+              - Worked on front-end development using HTML, CSS, and JavaScript
+              <br />
+              - Assisted in maintaining internal tools
+            </Typography>
+          </Paper>
+        </TimelineContent>
+      </TimelineItem>
+
+      {/* Add more TimelineItems for additional work history */}
+    </Timeline>
       </CardContent>
     </Card>
       </Container>
