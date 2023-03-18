@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Button, Box } from '@mui/material';
+import { TextField, Button, Box, Paper, Container } from '@mui/material';
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -15,6 +15,8 @@ export default function Contact() {
   return (
     <div id="contactSection">
     <form onSubmit={handleSubmit}>
+    <Container maxWidth="xs" >
+    <Paper elevation={12} style={{maxWidth:"500px"}}>
       <Box display="flex" flexDirection="column" maxWidth={400} mx="auto">
         <TextField
           label="Name"
@@ -44,6 +46,8 @@ export default function Contact() {
           Submit
         </Button>
       </Box>
+      </Paper>
+      </Container>
     </form>
     </div>
   );

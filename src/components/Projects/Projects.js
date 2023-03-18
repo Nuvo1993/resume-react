@@ -1,5 +1,5 @@
 import "./Projects.css";
-import {Typography} from "@mui/material";
+import { Typography } from "@mui/material";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Grid from "@mui/material/Grid";
@@ -29,8 +29,11 @@ export default function Projects() {
                   TIAA Bank
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Lizards are a widespread group of squamate reptiles, with over
-                  6,000 species, ranging across all continents except Antarctica
+                  TIAA Bank is an American online bank that provides personal
+                  banking, investing, and lending solutions for individuals and
+                  businesses. Its website, tiaabank.com, serves as a platform
+                  for customers to access their accounts, manage their finances,
+                  and apply for banking services.
                 </Typography>
               </CardContent>
               <CardActions>
@@ -52,13 +55,17 @@ export default function Projects() {
                   austinneveauart
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Lizards are a widespread group of squamate reptiles, with over
-                  6,000 species, ranging across all continents except Antarctica
+                  My personal website and online art portfolio. The website showcases my
+                  art work and skills in web development, design, and branding. It
+                  also provides a means for potential clients to contact me for
+                  freelance work or collaboration opportunities.
                 </Typography>
               </CardContent>
               <CardActions>
                 <Button size="small">
-                  <a href="https://www.ocala.com/story/news/education/2018/03/20/belleview-middle-teacher-scolded-for-monkey-comment/12951379007/">Nuvodraws</a>
+                  <a href="https://www.ocala.com/story/news/education/2018/03/20/belleview-middle-teacher-scolded-for-monkey-comment/12951379007/">
+                    Nuvodraws
+                  </a>
                 </Button>
               </CardActions>
             </Card>

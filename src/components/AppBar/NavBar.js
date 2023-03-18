@@ -12,14 +12,26 @@ import {
   MenuItem,
   Button,
   Stack,
+  createTheme
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from "react-scroll";
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#1B2838",
+    },
+    secondary: {
+      main: '#3B4F6E',
+    },
+  },
+});
+
 function NavBar() {
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ backgroundColor: '#3B4F6E' }}>
       <Toolbar>
         <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
         <Typography

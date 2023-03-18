@@ -34,3 +34,7 @@
     width: 100%;
     height: auto;
   }
+
+  .header-wrapper{
+    padding: 5%;
+  }

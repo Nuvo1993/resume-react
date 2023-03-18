@@ -15,15 +15,17 @@ import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
 import CodeIcon from "@mui/icons-material/Code";
+import TerminalIcon from "@mui/icons-material/Terminal";
 import { Box, Card, CardContent, Chip, Grid, Typography } from "@mui/material";
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-
+import Timeline from "@mui/lab/Timeline";
+import TimelineItem from "@mui/lab/TimelineItem";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineContent from "@mui/lab/TimelineContent";
+import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
+import TimelineDot from "@mui/lab/TimelineDot";
+import unfLogo from "../../assets/images/unf-logo.jpg";
+import fscjLogo from "../../assets/images/fscj-logo.png";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -34,14 +36,14 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 const workHistory = [
   {
-    company: 'Company A',
-    position: 'Software Engineer',
-    duration: 'Jan 2019 - Dec 2020',
+    company: "Company A",
+    position: "Software Engineer",
+    duration: "Jan 2019 - Dec 2020",
   },
   {
-    company: 'Company B',
-    position: 'Senior Developer',
-    duration: 'Jan 2021 - Present',
+    company: "Company B",
+    position: "Senior Developer",
+    duration: "Jan 2021 - Present",
   },
 ];
 
@@ -71,14 +73,14 @@ export default function Resume() {
   const devOpsSkills = ["Git", "Docker", "Kubernetes", "AWS", "Terraform"];
   return (
     <div data-aos="fade-up" id="resumeSection">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" >
         <Box
           sx={{
             display: "inline-flex",
             flexWrap: "wrap",
             "& > :not(style)": {
               m: 1,
-              width: 300
+              width: 300,
             },
           }}
         >
@@ -123,7 +125,7 @@ export default function Resume() {
           <Paper elevation={12}>
             <Grid container direction="column" alignItems="center">
               <Grid item>
-                <CodeIcon
+                <TerminalIcon
                   sx={{
                     display: { xs: "none", md: "flex" },
                     mr: 1,
@@ -141,65 +143,190 @@ export default function Resume() {
           </Paper>
         </Box>
         <Card>
-      <CardContent>
-        <Typography variant="h6" gutterBottom>
-          Work History
-        </Typography>
-        <Timeline position="alternate">
-      <TimelineItem>
-        <TimelineOppositeContent>
-          <Typography variant="body2" color="textSecondary">
-            2019 - 2021
-          </Typography>
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-          <Paper elevation={3}>
-            <Typography variant="h6" component="h1">
-              Software Developer
+          <CardContent>
+            <Typography variant="h4" gutterBottom>
+              Work History
             </Typography>
-            <Typography>Company A</Typography>
-            <Typography>
-              - Developed web applications using React and Node.js
-              <br />
-              - Collaborated with cross-functional teams
-            </Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
+            <Timeline position="alternate">
+              <TimelineItem>
+                <TimelineOppositeContent>
+                  <Typography variant="body2" color="textSecondary">
+                    2022 - Present
+                  </Typography>
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Paper elevation={3}>
+                    <Typography variant="h6" component="h1">
+                      Senior Software Developer
+                    </Typography>
+                    <Typography>TIAA Bank</Typography>
+                    <Typography>
+                      - Designed web applications using various frameworks based
+                      on clients specifications.
+                      <br />- Converted console applications to SSIS
+                      <br />- Triaged application vulnerabilities using
+                      Veracode.com
+                      <br />- Managed applications with other developers using
+                      Team Foundation Server as a source control.
+                      <br />- Created reporting applications using the IBM’s
+                      enterprise planning software TM1.
+                      <br />- Developed unit tests for all development releases
+                    </Typography>
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
 
-      <TimelineItem>
-        <TimelineOppositeContent>
-          <Typography variant="body2" color="textSecondary">
-            2017 - 2019
-          </Typography>
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-          <Paper elevation={3}>
-            <Typography variant="h6" component="h1">
-              Junior Developer
+              <TimelineItem>
+                <TimelineOppositeContent>
+                  <Typography variant="body2" color="textSecondary">
+                    2016 - 2022
+                  </Typography>
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Paper elevation={3}>
+                    <Typography variant="h6" component="h1">
+                      Software Developer
+                    </Typography>
+                    <Typography>TIAA Bank</Typography>
+                    <Typography>
+                      - Designed web applications using various frameworks based
+                      on clients specifications.
+                      <br />- Converted console applications to SSIS
+                      <br />- Triaged application vulnerabilities using
+                      Veracode.com
+                      <br />- Managed applications with other developers using
+                      Team Foundation Server as a source control.
+                      <br />- Created reporting applications using the IBM’s
+                      enterprise planning software TM1.
+                      <br />- Developed unit tests for all development releases
+                    </Typography>
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineOppositeContent>
+                  <Typography variant="body2" color="textSecondary">
+                    2015 - 2016
+                  </Typography>
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Paper elevation={3}>
+                    <Typography variant="h6" component="h1">
+                      QA Analyst
+                    </Typography>
+                    <Typography>EverBank</Typography>
+                    <Typography>
+                      - Wrote and maintained test scripts using Microsoft Test
+                      Manager
+                      <br />- Worked closely with developers to resolve any
+                      identified bugs
+                      <br />- Evaluated and tested all internal applications for
+                      IT corporate and accounting groups.
+                      <br />- Created automated test scripts for several
+                      applications using the Selenium framework.
+                    </Typography>
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineOppositeContent>
+                  <Typography variant="body2" color="textSecondary">
+                    June 2015 - August 2015
+                  </Typography>
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Paper elevation={3}>
+                    <Typography variant="h6" component="h1">
+                      IT Intern
+                    </Typography>
+                    <Typography>EverBank</Typography>
+                    <Typography>
+                      - Created documentation for Development and QA groups
+                      <br />- Developed an understanding of Everbank’s SDLC
+                      <br />- Mentored with QA analysts to test various
+                      development updates
+                      <br />- Partnered with co-workers to discuss department
+                      and individual goals{" "}
+                    </Typography>
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+              {/* Add more TimelineItems for additional work history */}
+            </Timeline>
+            <Typography variant="h4" gutterBottom>
+              Education
             </Typography>
-            <Typography>Company B</Typography>
-            <Typography>
-              - Worked on front-end development using HTML, CSS, and JavaScript
-              <br />
-              - Assisted in maintaining internal tools
-            </Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
-
-      {/* Add more TimelineItems for additional work history */}
-    </Timeline>
-      </CardContent>
-    </Card>
+            <Timeline position="alternate">
+              <TimelineItem>
+                <TimelineOppositeContent>
+                  <Typography variant="body2" color="textSecondary">
+                    January 2015 - April 2018
+                  </Typography>
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Paper elevation={3}>
+                    <Typography variant="h6" component="h1">
+                      University of North Florida
+                    </Typography>
+                    <Typography>
+                      Bachelors Degree of Information Technology
+                    </Typography>
+                    <img
+                      src={unfLogo}
+                      alt="My Image"
+                      className="circle-image"
+                    />
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineOppositeContent>
+                  <Typography variant="body2" color="textSecondary">
+                    January 2012 - December 2014
+                  </Typography>
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Paper elevation={3}>
+                    <Typography variant="h6" component="h1">
+                      Florida State College of Jacksonville
+                    </Typography>
+                    <Typography>Associates Degree</Typography>
+                    <img
+                      src={fscjLogo}
+                      alt="My Image"
+                      className="circle-image"
+                    />
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+            </Timeline>
+            <Grid></Grid>
+          </CardContent>
+        </Card>
       </Container>
     </div>
   );
