@@ -26,14 +26,13 @@ import {
 function App() {
   return (
     <div className="App">
-      <Box sx={{ flexGrow: 1 }}>
+      <Container maxWidth="xl">
         <NavBar />
         <Header />
         <Projects />
         <Resume />
-        <AboutMe />
         <Contact />
-      </Box>
+      </Container>
     </div>
   );
 }

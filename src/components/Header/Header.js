@@ -1,5 +1,5 @@
 import "./Header.css";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Unstable_Grid2";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
@@ -39,72 +39,42 @@ const SimpleCloud = () => (
 export default function Header() {
   return (
     <header className="App-header">
-      <Paper className="header-wrapper" elevation={12}>
-      <Container maxWidth="xl" >
-        <Grid container spacing={0}>
-          <Grid item xs={3}>
-            <div data-aos="fade-right" className="text">
-              <Typography variant="h3">
-                Hello, <br /> I'm{" "}
-                <span className="highlight">Austin Neveau</span>
-                <br /> I'm a full-stack web developer.
-              </Typography>
-            </div>
+      <Container maxWidth="xl">
+        <Paper className="header-wrapper" elevation={12}>
+          <Grid container spacing={1}>
+            <Grid item xs={12} lg={3}>
+              <div data-aos="fade-right" className="text">
+                <Typography variant="h3">
+                  Hello, <br /> I'm{" "}
+                  <span className="highlight">Austin Neveau</span>
+                  <br /> I'm a full-stack web developer.
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item xs={12} lg={3}>
+              <div data-aos="fade-left" className="circle-container">
+                <img src={profilePic} alt="My Image" className="circle-image" />
+              </div>
+            </Grid>
+            <Grid item xs={12} lg={6}>
+              <SimpleCloud />
+            </Grid>
+            <Grid item xs={12} lg={6}>
+              <div data-aos="fade-up">
+                <Typography variant="h6">
+                  As a full-stack software developer, I possess a strong passion
+                  for learning and implementing new technologies. My ability to
+                  learn quickly and efficiently enables me to adapt to any
+                  project and deliver high-quality solutions. I am excited to
+                  work with like-minded individuals and contribute to the growth
+                  of any organization that values innovation, collaboration, and
+                  excellence.
+                </Typography>
+              </div>
+            </Grid>
           </Grid>
-          <Grid item xs={3}>
-            <div data-aos="fade-left" className="circle-container">
-              <img src={profilePic} alt="My Image" className="circle-image" />
-            </div>
-          </Grid>
-          <Grid item xs={6}>
-            <SimpleCloud />
-          </Grid>
-          <Grid item xs={6}>
-            <div data-aos="fade-up">
-              <Typography variant="h6">
-                As a full-stack software developer, I possess a strong passion
-                for learning and implementing new technologies. My ability to
-                learn quickly and efficiently enables me to adapt to any project
-                and deliver high-quality solutions. I am excited to work with
-                like-minded individuals and contribute to the growth of any
-                organization that values innovation, collaboration, and
-                excellence.
-              </Typography>
-            </div>
-          </Grid>
-        </Grid>
-
-        {/* <Grid container spacing={1}>
-          <Grid item xs={4}>
-            <div data-aos="fade-right" className="text">
-              <Typography variant="h3">
-                Hello, <br /> I'm{" "}
-                <span className="highlight">Austin Neveau</span>
-                <br /> I'm a full-stack web developer.
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item xs={8}>
-            <div data-aos="fade-left" className="circle-container">
-              <img src={profilePic} alt="My Image" className="circle-image" />
-            </div>
-          </Grid>
-          <Grid item xs={6}>
-            <div data-aos="fade-up">
-              <Typography variant="h6">
-                As a full-stack software developer, I possess a strong passion
-                for learning and implementing new technologies. My ability to
-                learn quickly and efficiently enables me to adapt to any project
-                and deliver high-quality solutions. I am excited to work with
-                like-minded individuals and contribute to the growth of any
-                organization that values innovation, collaboration, and
-                excellence.
-              </Typography>
-            </div>
-          </Grid>
-        </Grid> */}
+        </Paper>
       </Container>
-      </Paper>
     </header>
   );
 }

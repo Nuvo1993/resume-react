@@ -1,64 +1,95 @@
-import "./AboutMe.css";
-import {
-  Typography,
-  CardClasses,
-  Grid,
-  Paper,
-  styled,
-  Container,
-} from "@mui/material";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import profilePic from "../../assets/images/DB9A0086.jpg";
+import React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { useForm } from 'react-hook-form';
+import styled  from '@emotion/styled';
+import profilePicture from '../../assets/images/DB9A0086.jpg';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
+const StyledBox = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: white;
+  width: 500px;
+  margin: 0 auto;
+`;
 
-export default function AboutMe() {
-  AOS.init();
+const StyledAvatar = styled(Avatar)`
+  width: 150px;
+  height: 150px;
+  border: 2px solid #3f51b5;
+  margin-bottom: 1rem;
+`;
+
+const StyledTypography = styled(Typography)`
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 2rem;
+`;
+
+const StyledForm = styled('form')`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+`;
+
+const AboutMe = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    // Implement your email sending logic here.
+  };
+
   return (
-    <div data-aos="fade-up" id="aboutMeSection" className="secondarySection">
-      <Container maxWidth="xl">
-        <Grid container spacing={2}>
-          <Grid item xs={6}>
-            <Item>
-              <Typography>
-                Hi, my name is [Your Name], and I'm a [Your Job Title] with a
-                passion for [Your Field of Work]. I've always been interested in
-                [Your Field of Work], and I pursued my education and career in
-                this field because I'm passionate about [What Inspired You].
-                Outside of work, I enjoy [Your Hobbies and Interests], which
-                help me relax and recharge after a busy day. I'm also proud of
-                [Your Accomplishments], which have helped me grow both
-                personally and professionally. For me, [Your Core Values and
-                Beliefs] are essential to living a fulfilling life, and I strive
-                to embody these values in everything that I do. My personal
-                motto is [Your Personal Mission Statement or Motto], which
-                reminds me to stay focused and motivated in my work and personal
-                life. When faced with new challenges and opportunities, I like
-                to [Your Approach to Challenges and Opportunities]. I believe
-                that this mindset helps me to stay open-minded and adaptable in
-                an ever-changing world. Currently, I'm excited about [Things
-                You're Working On or Excited About for the Future], which I
-                believe will help me to make a positive impact in my community
-                and beyond.
-              </Typography>
-            </Item>
-          </Grid>
-          <Grid item xs={6}>
-            <Item>
-              <div data-aos="fade-left" className="circle-container">
-                <img src={profilePic} alt="My Image" className="circle-image" />
-              </div>
-            </Item>
-          </Grid>
-        </Grid>
-      </Container>
-    </div>
+    <StyledBox>
+      <StyledAvatar src={profilePicture}/>
+      <StyledTypography variant="h4">Austin Neveau</StyledTypography>
+      <StyledTypography variant="body1">
+      I would love the opportunity to discuss how my skills and experiences align with your company's goals and how we can explore potential opportunities together. Please feel free to get in touch with me using the contact form below so that we can discuss further opportunities and find out how I can make a positive impact on your organization.
+      </StyledTypography>
+      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+        <TextField
+          label="Name"
+          variant="outlined"
+          {...register('name', { required: true })}
+          error={errors.name}
+          helperText={errors.name && 'Name is required.'}
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="Email"
+          variant="outlined"
+          {...register('email', { required: true })}
+          error={errors.email}
+          helperText={errors.email && 'Email is required.'}
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="Message"
+          variant="outlined"
+          {...register('message', { required: true })}
+          error={errors.message}
+          helperText={errors.message && 'Message is required.'}
+          fullWidth
+          multiline
+          rows={4}
+          margin="normal"
+        />
+        <Button type="submit" variant="contained" color="primary">
+          Send Message
+        </Button>
+      </StyledForm>
+    </StyledBox>
   );
-}
+};
+
+export default AboutMe;

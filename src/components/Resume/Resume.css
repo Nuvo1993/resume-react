@@ -1,4 +1,17 @@
 #resumeSection{
     height: auto;
     color: white;
+    display: flex;
+    justify-content: center;
 }
+
+.download-button {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .skillBox{
+    height: auto;
+    margin: 10px;
+  }

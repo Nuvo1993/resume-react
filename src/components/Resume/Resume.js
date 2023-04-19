@@ -16,7 +16,15 @@ import DraftsIcon from "@mui/icons-material/Drafts";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
 import CodeIcon from "@mui/icons-material/Code";
 import TerminalIcon from "@mui/icons-material/Terminal";
-import { Box, Card, CardContent, Chip, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Chip,
+  Grid,
+  Typography,
+  Button,
+} from "@mui/material";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
@@ -26,6 +34,8 @@ import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import unfLogo from "../../assets/images/unf-logo.jpg";
 import fscjLogo from "../../assets/images/fscj-logo.png";
+import resume from "../../assets/Resume.pdf";
+import PictureAsPdf from "@mui/icons-material/PictureAsPdf";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -68,80 +78,96 @@ function SkillChips({ title, skills }) {
 
 export default function Resume() {
   AOS.init();
-  const frontEndSkills = ["HTML", "CSS", "JavaScript", "React", "Angular"];
-  const backEndSkills = ["Node.js", "Python", "Ruby", "Java", "C#"];
-  const devOpsSkills = ["Git", "Docker", "Kubernetes", "AWS", "Terraform"];
+  const frontEndSkills = ["React", "Angular", "Typescript", "HTML", "CSS"];
+  const backEndSkills = [
+    "Node.js",
+    "C#",
+    "Java",
+    "RESTApi",
+    "Entity Framework",
+    "SQL Server",
+    "NUnit",
+  ];
+  const devOpsSkills = [
+    "Git",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "Splunk",
+    "Jira",
+    "TFS",
+  ];
   return (
     <div data-aos="fade-up" id="resumeSection">
-      <Container maxWidth="xl" >
-        <Box
-          sx={{
-            display: "inline-flex",
-            flexWrap: "wrap",
-            "& > :not(style)": {
-              m: 1,
-              width: 300,
-            },
-          }}
-        >
-          <Paper elevation={12}>
-            <Grid container direction="column" alignItems="center">
-              <Grid item>
-                <DeveloperModeIcon
-                  sx={{
-                    display: { xs: "none", md: "flex" },
-                    mr: 1,
-                    fontSize: "75px",
-                  }}
-                />
-              </Grid>
+      <Container maxWidth="xl">
+        <Grid container spacing={1}>
+          <Grid item xs={12} lg={4}>
+          <Paper elevation={12} className="skillBox">
+          <Grid container direction="column" alignItems="center">
+            <Grid item>
+              <DeveloperModeIcon
+                sx={{
+                  display: { xs: "none", md: "flex" },
+                  mr: 1,
+                  fontSize: "75px",
+                }}
+              />
             </Grid>
+          </Grid>
 
-            <Grid item container direction="column" alignItems="flex-start">
-              <Grid item xs={12} sm={4}>
-                <SkillChips title="Front End Skills" skills={frontEndSkills} />
-              </Grid>
+          <Grid item container direction="column" alignItems="flex-start">
+            <Grid item xs={12} sm={4}>
+              <SkillChips title="Front End Skills" skills={frontEndSkills} />
             </Grid>
-          </Paper>
-          <Paper elevation={12}>
-            <Grid container direction="column" alignItems="center">
-              <Grid item>
-                <CodeIcon
-                  sx={{
-                    display: { xs: "none", md: "flex" },
-                    mr: 1,
-                    fontSize: "75px",
-                  }}
-                />
-              </Grid>
+          </Grid>
+        </Paper>
+          </Grid>
+          <Grid item xs={12} lg={4}>
+          <Paper elevation={12} className="skillBox">
+          <Grid container direction="column" alignItems="center">
+            <Grid item>
+              <CodeIcon
+                sx={{
+                  display: { xs: "none", md: "flex" },
+                  mr: 1,
+                  fontSize: "75px",
+                }}
+              />
             </Grid>
+          </Grid>
 
-            <Grid item container direction="column" alignItems="flex-start">
-              <Grid item xs={12} sm={4}>
-                <SkillChips title="Back End Skills" skills={backEndSkills} />
-              </Grid>
+          <Grid item container direction="column" alignItems="flex-start">
+            <Grid item xs={12} sm={4}>
+              <SkillChips title="Back End Skills" skills={backEndSkills} />
             </Grid>
-          </Paper>
-          <Paper elevation={12}>
-            <Grid container direction="column" alignItems="center">
-              <Grid item>
-                <TerminalIcon
-                  sx={{
-                    display: { xs: "none", md: "flex" },
-                    mr: 1,
-                    fontSize: "75px",
-                  }}
-                />
-              </Grid>
-            </Grid>
+          </Grid>
+        </Paper>
+          </Grid>
 
-            <Grid item container direction="column" alignItems="flex-start">
-              <Grid item xs={12} sm={4}>
-                <SkillChips title="DevOps and Tools" skills={devOpsSkills} />
-              </Grid>
+          <Grid item xs={12} lg={4}>
+          <Paper elevation={12} className="skillBox">
+          <Grid container direction="column" alignItems="center">
+            <Grid item>
+              <TerminalIcon
+                sx={{
+                  display: { xs: "none", md: "flex" },
+                  mr: 1,
+                  fontSize: "75px",
+                }}
+              />
             </Grid>
-          </Paper>
-        </Box>
+          </Grid>
+          <Grid item container direction="column" alignItems="flex-start">
+            <Grid item xs={12} sm={4}>
+              <SkillChips title="DevOps and Tools" skills={devOpsSkills} />
+            </Grid>
+          </Grid>
+        </Paper>
+          </Grid>
+        </Grid>
+
+
+
         <Card>
           <CardContent>
             <Typography variant="h4" gutterBottom>
@@ -165,16 +191,23 @@ export default function Resume() {
                     </Typography>
                     <Typography>TIAA Bank</Typography>
                     <Typography>
-                      - Designed web applications using various frameworks based
-                      on clients specifications.
-                      <br />- Converted console applications to SSIS
-                      <br />- Triaged application vulnerabilities using
-                      Veracode.com
-                      <br />- Managed applications with other developers using
-                      Team Foundation Server as a source control.
-                      <br />- Created reporting applications using the IBM’s
-                      enterprise planning software TM1.
-                      <br />- Developed unit tests for all development releases
+                      - Developed and maintained advanced software applications
+                      using a variety of programming languages, frameworks, and
+                      technologies.
+                      <br />- Collaborated with product owners, business
+                      analysts, and stakeholders to gather requirements,
+                      identify technical solutions, and create detailed project
+                      plans.
+                      <br />- Led cross-functional teams to deliver high-quality
+                      software products on time and within budget.
+                      <br />- Developed strategies to improve our Software
+                      development lifecycle process
+                      <br />- Implemented proven methodologies and stringent
+                      quality control measures to ensure that software products
+                      met functional and non-functional requirements, including
+                      scalability, performance, and security.
+                      <br />- Provided production support for any high priority
+                      production issues
                     </Typography>
                   </Paper>
                 </TimelineContent>
@@ -324,6 +357,16 @@ export default function Resume() {
                 </TimelineContent>
               </TimelineItem>
             </Timeline>
+            <Button
+              className="download-button"
+              variant="contained"
+              color="primary"
+              startIcon={<PictureAsPdf />}
+              href={resume}
+              download="Resume.pdf"
+            >
+              Download PDF
+            </Button>
             <Grid></Grid>
           </CardContent>
         </Card>

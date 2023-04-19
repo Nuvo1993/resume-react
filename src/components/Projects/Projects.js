@@ -11,13 +11,16 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import tiaabankSite_IMG from "../../assets/images/tiaabank-site.png";
 import nuvodrawsSite_IMG from "../../assets/images/nuvodraws-site.png";
+import leafsAdventure_IMG from "../../assets/images/leafsAdventure.png";
+import internal_IMG from "../../assets/images/internal.png";
+
 export default function Projects() {
   AOS.init();
   return (
     <div data-aos="fade-up" id="projectsSection" className="secondarySection">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" minWidth="xs">
         <Grid container spacing={2}>
-          <Grid item xs={3}>
+          <Grid item xs={12} lg={3}>
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 sx={{ height: 176 }}
@@ -43,7 +46,7 @@ export default function Projects() {
               </CardActions>
             </Card>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} lg={3}>
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 sx={{ height: 176 }}
@@ -52,7 +55,7 @@ export default function Projects() {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  austinneveauart
+                  Art Portfolio
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   My personal website and online art portfolio. The website showcases my
@@ -63,18 +66,18 @@ export default function Projects() {
               </CardContent>
               <CardActions>
                 <Button size="small">
-                  <a href="https://www.ocala.com/story/news/education/2018/03/20/belleview-middle-teacher-scolded-for-monkey-comment/12951379007/">
+                  <a href="http://austinneveau.com">
                     Nuvodraws
                   </a>
                 </Button>
               </CardActions>
             </Card>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} lg={3}>
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
-                sx={{ height: 140 }}
-                image="../../../assets/images/DB9A0086.jpg"
+                sx={{ height: 191 }}
+                image={leafsAdventure_IMG}
                 title="green iguana"
               />
               <CardContent>
@@ -82,34 +85,30 @@ export default function Projects() {
                   Leafs Adventure
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Lizards are a widespread group of squamate reptiles, with over
-                  6,000 species, ranging across all continents except Antarctica
+                Leafs Adventure was a mobile platformer game I developed for unity as a senior project in college.
+                This was a really enjoyable programming experience for me as gaming has always been a hobby of mine.
+                The game was inspired by classic games like Super Mario bros and the Legend of Zelda.
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Button size="small">tiaabank.com</Button>
-              </CardActions>
             </Card>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} lg={3}>
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
-                sx={{ height: 140 }}
-                image="../../../assets/images/DB9A0086.jpg"
+                sx={{ height: 191 }}
+                image={internal_IMG}
                 title="green iguana"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Lizard
+                  Internal
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Lizards are a widespread group of squamate reptiles, with over
-                  6,000 species, ranging across all continents except Antarctica
+                  A large number of the applications I have supported have been internal applications.
+                  Most of these are .NET web services that support the day to day business functionality.
+                  I've also worked internally with SQL Server, Split IO, Azure DevOps, TFS, Git and more.
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Button size="small">tiaabank.com</Button>
-              </CardActions>
             </Card>
           </Grid>
         </Grid>
