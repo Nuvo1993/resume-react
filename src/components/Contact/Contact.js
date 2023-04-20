@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState }  from 'react';
+import emailjs from 'emailjs-com';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -36,20 +37,45 @@ const StyledTypography = styled(Typography)`
   margin-bottom: 2rem;
 `;
 
-const StyledForm = styled('form')`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 400px;
-`;
+// const StyledForm = styled('form')`
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   max-width: 400px;
+// `;
 
-const AboutMe = () => {
+export default function Contact() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    // Implement your email sending logic here.
+  const onSubmit = (data, e) => {
+    e.preventDefault();
+    emailjs
+      .send(
+        'service_i06cqs7', // Replace with your EmailJS service ID
+        'template_kq6uum4', // Replace with your EmailJS template ID
+        {
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        },
+        'Ui4kz9EtSJajAXuqh' // Replace with your EmailJS user ID
+      )
+      .then(
+        (result) => {
+          alert('Message sent, thank you!');
+          setName('');
+          setEmail('');
+          setMessage('');
+        },
+        (error) => {
+          alert('An error occurred, please try again:', error.text);
+        }
+      );
   };
+ 
 
   return (
     <StyledBox>
@@ -57,7 +83,7 @@ const AboutMe = () => {
       <StyledTypography variant="body1">
       I would love the opportunity to discuss how my skills and experiences align with your company's goals and how we can explore potential opportunities together. Please feel free to get in touch with me using the contact form below so that we can discuss further opportunities and find out how I can make a positive impact on your organization.
       </StyledTypography>
-      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           label="Name"
           variant="outlined"
@@ -90,9 +116,7 @@ const AboutMe = () => {
         <Button type="submit" variant="contained" color="primary">
           Send Message
         </Button>
-      </StyledForm>
+      </form>
     </StyledBox>
   );
-};
-
-export default AboutMe;
+}
