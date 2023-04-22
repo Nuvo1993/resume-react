@@ -1,6 +1,7 @@
 #aboutMeSection{
     height: 500px;
     color: white;
+    margin-top: 5%;
 }
 .circle-container {
     display: flex;

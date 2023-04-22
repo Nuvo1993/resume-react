@@ -18,8 +18,13 @@ export default function Projects() {
   AOS.init();
   return (
     <div data-aos="fade-up" id="projectsSection" className="secondarySection">
-      <Container maxWidth="xl" minWidth="xs">
+      <Container maxWidth="xl">
         <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Typography variant="h4" gutterBottom>
+              Projects
+            </Typography>
+          </Grid>
           <Grid item xs={12} lg={3}>
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
@@ -58,17 +63,16 @@ export default function Projects() {
                   Art Portfolio
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  My personal website and online art portfolio. The website showcases my
-                  art work and skills in web development, design, and branding. It
-                  also provides a means for potential clients to contact me for
-                  freelance work or collaboration opportunities.
+                  My personal website and online art portfolio. The website
+                  showcases my art work and skills in web development, design,
+                  and branding. It also provides a means for potential clients
+                  to contact me for freelance work or collaboration
+                  opportunities.
                 </Typography>
               </CardContent>
               <CardActions>
                 <Button size="small">
-                  <a href="http://austinneveau.com">
-                    Nuvodraws
-                  </a>
+                  <a href="http://austinneveau.com">Nuvodraws</a>
                 </Button>
               </CardActions>
             </Card>
@@ -85,9 +89,11 @@ export default function Projects() {
                   Leafs Adventure
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                Leafs Adventure was a mobile platformer game I developed for unity as a senior project in college.
-                This was a really enjoyable programming experience for me as gaming has always been a hobby of mine.
-                The game was inspired by classic games like Super Mario bros and the Legend of Zelda.
+                  Leafs Adventure was a mobile platformer game I developed for
+                  unity as a senior project in college. This was a really
+                  enjoyable programming experience for me as gaming has always
+                  been a hobby of mine. The game was inspired by classic games
+                  like Super Mario bros and the Legend of Zelda.
                 </Typography>
               </CardContent>
             </Card>
@@ -104,9 +110,11 @@ export default function Projects() {
                   Internal
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  A large number of the applications I have supported have been internal applications.
-                  Most of these are .NET web services that support the day to day business functionality.
-                  I've also worked internally with SQL Server, Split IO, Azure DevOps, TFS, Git and more.
+                  A large number of the applications I have supported have been
+                  internal applications. Most of these are .NET web services
+                  that support the day to day business functionality. I've also
+                  worked internally with SQL Server, Split IO, Azure DevOps,
+                  TFS, Git and more.
                 </Typography>
               </CardContent>
             </Card>

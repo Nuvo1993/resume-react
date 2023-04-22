@@ -33,7 +33,10 @@ function NavBar() {
   return (
     <AppBar position="static" style={{ backgroundColor: '#3B4F6E' }}>
       <Toolbar>
-        <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+        {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+        <Typography variant="h5">
+          AN
+        </Typography>
         <Typography
           variant="h6"
           noWrap
@@ -60,7 +63,7 @@ function NavBar() {
           spy={true}
           smooth={true}
           hashSpy={true}
-          offset={50}
+          offset={-100}
           duration={500}
           delay={1000}
           isDynamic={true}
@@ -91,7 +94,7 @@ function NavBar() {
           delay={1000}
           isDynamic={true}
         >
-        <Button variant="text" color="inherit">About Me</Button>
+        <Button variant="text" color="inherit">About</Button>
         </Link>
 
         <Link

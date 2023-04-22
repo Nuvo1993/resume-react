@@ -78,7 +78,7 @@ function SkillChips({ title, skills }) {
 
 export default function Resume() {
   AOS.init();
-  const frontEndSkills = ["React", "Angular", "Typescript", "HTML", "CSS"];
+  const frontEndSkills = ["React", "Angular", "Typescript", "Javascript", "RxJS", "HTML", "CSS"];
   const backEndSkills = [
     "Node.js",
     "C#",
@@ -86,7 +86,7 @@ export default function Resume() {
     "RESTApi",
     "Entity Framework",
     "SQL Server",
-    "NUnit",
+    "xUnit",
   ];
   const devOpsSkills = [
     "Git",
@@ -100,7 +100,7 @@ export default function Resume() {
   return (
     <div data-aos="fade-up" id="resumeSection">
       <Container maxWidth="xl">
-        <Grid container spacing={1}>
+        <Grid container spacing={0}>
           <Grid item xs={12} lg={4}>
           <Paper elevation={12} className="skillBox">
           <Grid container direction="column" alignItems="center">
