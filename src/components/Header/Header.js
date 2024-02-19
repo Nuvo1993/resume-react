@@ -4,7 +4,6 @@ import Paper from "@mui/material/Paper";
 import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import profilePic from "../../assets/images/DB9A0086.jpg";
 import { TagCloud } from "react-tagcloud";
 
@@ -15,17 +14,15 @@ const data = [
   { value: "Javascript", count: 25 },
   { value: "Node.js", count: 20 },
   { value: "Angular", count: 20 },
-  { value: "HTML5", count: 35 },
-  { value: "CSS3", count: 35 },
   { value: "React", count: 25 },
-  { value: "TotalAgility", count: 35 },
+  { value: "NextJS", count: 35 },
   { value: "NPM", count: 30 },
   { value: "SQL", count: 60 },
   { value: "Git", count: 60 },
   { value: "TFS", count: 60 },
-  { value: "Angular.js", count: 10 },
   { value: "TypeScript", count: 30 },
   { value: "Jira", count: 20 },
+  { value: "Openshift", count: 15 },
   { value: "GitHub Actions", count: 15 },
 ];
 const options = {
