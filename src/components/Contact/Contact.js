@@ -54,14 +54,14 @@ export default function Contact() {
     e.preventDefault();
     emailjs
       .send(
-        'service_i06cqs7', // Replace with your EmailJS service ID
-        'template_kq6uum4', // Replace with your EmailJS template ID
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         {
           name: data.name,
           email: data.email,
           message: data.message,
         },
-        'Ui4kz9EtSJajAXuqh' // Replace with your EmailJS user ID
+        process.env.REACT_APP_EMAILJS_USER_ID
       )
       .then(
         (result) => {
