@@ -22,14 +22,14 @@
     "react-tagcloud": "^2.3.1",
     "web-vitals": "^2.1.4"
   },
-  "env":{
-    "CI": false
-  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   },
   "eslintConfig": {
     "extends": [
