@@ -1,188 +1,32 @@
-#resumeSection {
-  min-height: 100vh;
-  padding: 60px 0;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  display: flex;
-  justify-content: center;
-}
-
-/* Skills Section Styling */
 .skillBox {
-  height: auto;
-  margin: 10px;
-  padding: 30px 20px;
-  border-radius: 16px;
-  background: white;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.skillBox::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #3B4F6E, #5a7aa5);
+  height: 100%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .skillBox:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(59, 79, 110, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-/* Timeline Styling */
-.MuiTimeline-root .MuiTimelineItem-root .MuiPaper-root {
-  padding: 20px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+.timeline-paper {
+  padding: 16px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.MuiTimeline-root .MuiTimelineItem-root .MuiPaper-root:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 24px rgba(59, 79, 110, 0.15);
+.timeline-paper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
-.MuiTimelineDot-root {
-  background-color: #3B4F6E;
-  box-shadow: 0 0 0 4px rgba(59, 79, 110, 0.1);
-}
-
-.MuiTimelineConnector-root {
-  background-color: #c3cfe2;
-}
-
-/* Education/Work History Card */
-#resumeSection .MuiCard-root {
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  margin-top: 40px;
-  background: white;
-}
-
-#resumeSection .MuiCardContent-root {
-  padding: 40px;
-}
-
-#resumeSection .MuiTypography-h4 {
-  color: #1B2838;
-  font-weight: 600;
-  margin-bottom: 30px;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-#resumeSection .MuiTypography-h4::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, #3B4F6E, #5a7aa5);
-  border-radius: 2px;
-}
-
-/* Skill Chips Styling */
-#resumeSection .MuiChip-root {
-  margin: 4px;
-  background: linear-gradient(135deg, #3B4F6E 0%, #4a6080 100%);
-  color: white;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  border-radius: 8px;
-}
-
-#resumeSection .MuiChip-root:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(59, 79, 110, 0.3);
-}
-
-/* Icons Styling */
-#resumeSection .MuiSvgIcon-root {
-  color: #3B4F6E;
-  margin-bottom: 20px;
-}
-
-/* Download Button */
-.download-button {
-  width: 240px;
-  height: 56px;
-  margin: 30px auto;
-  display: flex;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 28px;
-  background: linear-gradient(135deg, #3B4F6E 0%, #4a6080 100%);
-  box-shadow: 0 4px 15px rgba(59, 79, 110, 0.3);
-  transition: all 0.3s ease;
-}
-
-.download-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(59, 79, 110, 0.4);
-}
-
-/* School Logo Images */
-.circle-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-top: 15px;
-  border: 3px solid #3B4F6E;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Timeline Content Typography */
-#resumeSection .MuiTimelineContent-root .MuiTypography-h6 {
-  color: #1B2838;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-#resumeSection .MuiTimelineContent-root .MuiTypography-body1,
-#resumeSection .MuiTimelineContent-root .MuiTypography-root:not(.MuiTypography-h6) {
-  color: #4a5568;
-  line-height: 1.8;
-}
-
-/* Responsive Design */
-@media (max-width: 960px) {
-  #resumeSection {
-    padding: 40px 0;
-  }
-
-  .skillBox {
-    margin: 10px 0;
-  }
-
-  #resumeSection .MuiCardContent-root {
-    padding: 24px;
-  }
-
-  .download-button {
-    width: 200px;
-    height: 48px;
-    font-size: 14px;
-  }
+.school-logo {
+  max-width: 80px;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 4px;
 }
 
 @media (max-width: 600px) {
-  #resumeSection {
-    padding: 30px 0;
-  }
-
-  .circle-image {
-    width: 60px;
-    height: 60px;
-  }
-
-  #resumeSection .MuiTypography-h4 {
-    font-size: 1.75rem;
+  .timeline-paper {
+    width: 100%;
   }
 }
