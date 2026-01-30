@@ -44,27 +44,111 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+# Resume React App
 
-### Code Splitting
+A small React single-page application for presenting a resume/portfolio. Bootstrapped with Create React App and structured for easy customization and deployment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Quick Links
 
-### Analyzing the Bundle Size
+- Live preview: local development at http://localhost:3000
+- Source: repository root
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Tech Stack
 
-### Making a Progressive Web App
+- React (Create React App)
+- JavaScript (ES6+)
+- CSS (component-scoped styles under `src/components`)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Getting Started
 
-### Advanced Configuration
+Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Node.js (>= 14) and npm
 
-### Deployment
+Install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm install
+```
 
-### `npm run build` fails to minify
+Run (development)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm start
+```
+
+Build (production)
+
+```bash
+npm run build
+```
+
+Test
+
+```bash
+npm test
+```
+
+## npm Scripts
+
+- `start` — run the dev server on http://localhost:3000
+- `build` — produce a production build into the `build/` folder
+- `test` — run test watcher
+- `eject` — eject CRA config (one-way)
+
+## Project Structure
+
+Top-level files and folders:
+
+- `public/` — static public assets and HTML template
+- `src/` — application source
+	- `App.js` — root app component
+	- `index.js` — app entry
+	- `components/` — UI components grouped by feature
+- `build/` — production build output (generated)
+
+Components overview (in `src/components`):
+
+- `Header/` — presents name/title (`src/components/Header/Header.js`)
+- `AppBar/` — top navigation bar (`src/components/AppBar/NavBar.js`)
+- `AboutMe/` — about section (`src/components/AboutMe/AboutMe.js`)
+- `Projects/` — project list/cards (`src/components/Projects/Projects.js`)
+- `Resume/` — resume view and download (`src/components/Resume/Resume.js`)
+- `Contact/` — contact details or form (`src/components/Contact/Contact.js`)
+
+For the component source, see [src/components](src/components).
+
+## Development Notes
+
+- Styles: component styles live alongside components in CSS files (e.g., `src/components/Header/Header.css`).
+- Assets: images are under `src/assets/images`.
+- Build artifacts are placed into the `build/` directory and are safe to deploy to static hosting.
+
+## Deployment
+
+The app can be deployed to any static hosting that serves the `build/` output (GitHub Pages, Netlify, Vercel, S3 + CloudFront, etc.).
+
+General steps:
+
+1. `npm run build`
+2. Upload the contents of `build/` to your hosting provider
+
+See Create React App deployment docs for provider-specific instructions: https://facebook.github.io/create-react-app/docs/deployment
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on contributing, code style, and testing.
+
+## Files to Know
+
+- [src/index.js](src/index.js) — app bootstrap
+- [src/App.js](src/App.js) — main application wrapper
+- [src/components](src/components) — UI components
+
+## License
+
+This project does not include a license file. Add a `LICENSE` if you intend to open-source it.
+
+---
+
+The repository has received documentation updates: `CONTRIBUTING.md` and `docs/COMPONENTS.md` were added.

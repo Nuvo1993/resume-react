@@ -4,6 +4,7 @@ install_type: full
 agent: null
 ides_setup:
   - claude-code
+  - github-copilot
 expansion_packs: []
 files:
   - path: .bmad-core\working-in-the-brownfield.md

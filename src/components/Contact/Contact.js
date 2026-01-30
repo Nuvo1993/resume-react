@@ -81,42 +81,8 @@ export default function Contact() {
     <StyledBox>
       <StyledAvatar src={profilePicture}/>
       <StyledTypography variant="body1">
-      I would love the opportunity to discuss how my skills and experiences align with your company's goals and how we can explore potential opportunities together. Please feel free to get in touch with me using the contact form below so that we can discuss further opportunities and find out how I can make a positive impact on your organization.
+        I am eager to discuss how my skills and experiences can contribute to your company's objectives. Let's explore potential collaborations and how I can make a positive impact within your team. You can reach me directly at <a href="mailto:austinneveau93@gmail.com">austinneveau93@gmail.com</a>. I look forward to our fruitful conversation and the opportunity to discuss how we can work together towards achieving your goals.
       </StyledTypography>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <TextField
-          label="Name"
-          variant="outlined"
-          {...register('name', { required: true })}
-          error={errors.name}
-          helperText={errors.name && 'Name is required.'}
-          fullWidth
-          margin="normal"
-        />
-        <TextField
-          label="Email"
-          variant="outlined"
-          {...register('email', { required: true })}
-          error={errors.email}
-          helperText={errors.email && 'Email is required.'}
-          fullWidth
-          margin="normal"
-        />
-        <TextField
-          label="Message"
-          variant="outlined"
-          {...register('message', { required: true })}
-          error={errors.message}
-          helperText={errors.message && 'Message is required.'}
-          fullWidth
-          multiline
-          rows={4}
-          margin="normal"
-        />
-        <Button type="submit" variant="contained" color="primary">
-          Send Message
-        </Button>
-      </form>
     </StyledBox>
-  );
+  );  
 }
