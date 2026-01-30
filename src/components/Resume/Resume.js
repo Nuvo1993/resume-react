@@ -100,6 +100,9 @@ export default function Resume() {
   return (
     <div data-aos="fade-up" id="resumeSection">
       <Container maxWidth="xl">
+        <Typography variant="h3" gutterBottom sx={{ textAlign: 'center', mb: 5, color: '#1B2838', fontWeight: 700 }}>
+          Resume & Skills
+        </Typography>
         <Grid container spacing={0}>
           <Grid item xs={12} lg={4}>
           <Paper elevation={12} className="skillBox">
@@ -357,17 +360,18 @@ export default function Resume() {
                 </TimelineContent>
               </TimelineItem>
             </Timeline>
-            <Button
-              className="download-button"
-              variant="contained"
-              color="primary"
-              startIcon={<PictureAsPdf />}
-              href={resume}
-              download="Resume.pdf"
-            >
-              Download PDF
-            </Button>
-            <Grid></Grid>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+              <Button
+                className="download-button"
+                variant="contained"
+                color="primary"
+                startIcon={<PictureAsPdf />}
+                href={resume}
+                download="Resume.pdf"
+              >
+                Download Resume
+              </Button>
+            </Box>
           </CardContent>
         </Card>
       </Container>
