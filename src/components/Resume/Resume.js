@@ -10,7 +10,9 @@ import {
   Typography,
   Button,
   Container,
-  Paper
+  Paper,
+  useMediaQuery,
+  useTheme
 } from "@mui/material";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
@@ -72,6 +74,8 @@ export default function Resume() {
     "Jira",
     "TFS",
   ];
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <div data-aos="fade-up" id="resumeSection" className="section">
       <Container maxWidth="lg">
@@ -106,7 +110,7 @@ export default function Resume() {
           <Typography variant="h4" gutterBottom align="center" sx={{ mb: 4 }}>
             Work History
           </Typography>
-          <Timeline position="alternate">
+          <Timeline position={isMobile ? "right" : "alternate"}>
             <TimelineItem>
               <TimelineOppositeContent color="text.secondary">
                 March 2021 - Present
@@ -185,7 +189,7 @@ export default function Resume() {
           <Typography variant="h4" gutterBottom align="center" sx={{ mb: 4 }}>
             Education
           </Typography>
-          <Timeline position="alternate">
+          <Timeline position={isMobile ? "right" : "alternate"}>
             <TimelineItem>
               <TimelineOppositeContent color="text.secondary">
                 2015 - 2018

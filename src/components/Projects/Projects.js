@@ -26,7 +26,7 @@ export default function Projects() {
             </Typography>
           </Grid>
           <Grid item xs={12} lg={3}>
-            <Card sx={{ maxWidth: 345, height: "100%" }}>
+            <Card sx={{ height: "100%" }}>
               <CardMedia
                 sx={{ height: 176 }}
                 image={everbankSite_IMG}
@@ -52,7 +52,7 @@ export default function Projects() {
             </Card>
           </Grid>
           <Grid item xs={12} lg={3}>
-            <Card sx={{ maxWidth: 345, height: "100%" }}>
+            <Card sx={{ height: "100%" }}>
               <CardMedia
                 sx={{ height: 176 }}
                 image={nuvodrawsSite_IMG}
@@ -70,10 +70,15 @@ export default function Projects() {
                   opportunities.
                 </Typography>
               </CardContent>
+              <CardActions>
+                <Button size="small">
+                  <a href="https://www.nuvodraws.com/">Nuvodraws.com</a>
+                </Button>
+              </CardActions>
             </Card>
           </Grid>
           <Grid item xs={12} lg={3}>
-            <Card sx={{ maxWidth: 345, height: "100%" }}>
+            <Card sx={{ height: "100%" }}>
               <CardMedia
                 sx={{ height: 191 }}
                 image={leafsAdventure_IMG}
@@ -91,10 +96,15 @@ export default function Projects() {
                   like Super Mario bros and the Legend of Zelda.
                 </Typography>
               </CardContent>
+              <CardActions>
+                <Button size="small">
+                  <a href="https://www.leafs-adventure.com/">Leafs Adventure</a>
+                </Button>
+              </CardActions>
             </Card>
           </Grid>
           <Grid item xs={12} lg={3}>
-            <Card sx={{ maxWidth: 345, height: "100%" }}>
+            <Card sx={{ height: "100%" }}>
               <CardMedia
                 sx={{ height: 191 }}
                 image={internal_IMG}
@@ -112,6 +122,11 @@ export default function Projects() {
                   TFS, Git and more.
                 </Typography>
               </CardContent>
+              <CardActions>
+                <Button size="small">
+                  <a href="https://www.internal.com/">Internal.com</a>
+                </Button>
+              </CardActions>
             </Card>
           </Grid>
         </Grid>

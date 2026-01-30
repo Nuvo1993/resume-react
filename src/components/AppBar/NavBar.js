@@ -14,7 +14,6 @@ import {
   useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-scroll";
 import { useState } from "react";
 
@@ -36,7 +35,6 @@ function NavBar() {
     <AppBar position="fixed" sx={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', backdropFilter: 'blur(10px)', boxShadow: '0 2px 10px rgba(0,0,0,0.1)' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1, color: theme.palette.primary.main }} />
           <Typography
             variant="h6"
             noWrap
@@ -52,7 +50,7 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
-            AUSTIN
+            Austin Neveau
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -93,7 +91,34 @@ function NavBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1, color: theme.palette.primary.main }} />
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: "50%",
+              width: 40,
+              height: 40,
+              border: `2px solid ${theme.palette.primary.main}`,
+              mr: 2,
+            }}
+          >
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href=""
+              sx={{
+                display: "flex",
+                fontFamily: "monospace",
+                fontWeight: 700,
+                color: theme.palette.primary.main,
+                textDecoration: "none",
+              }}
+            >
+              AN
+            </Typography>
+          </Box>
           <Typography
             variant="h5"
             noWrap
@@ -110,7 +135,7 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
-            AUSTIN
+            
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (
