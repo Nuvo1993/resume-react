@@ -9,7 +9,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import tiaabankSite_IMG from "../../assets/images/tiaabank-site.png";
+import everbankSite_IMG from "../../assets/images/everbank-site.png";
 import nuvodrawsSite_IMG from "../../assets/images/nuvodraws-site.png";
 import leafsAdventure_IMG from "../../assets/images/leafsAdventure.png";
 import internal_IMG from "../../assets/images/internal.png";
@@ -26,33 +26,33 @@ export default function Projects() {
             </Typography>
           </Grid>
           <Grid item xs={12} lg={3}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345, height: "100%" }}>
               <CardMedia
                 sx={{ height: 176 }}
-                image={tiaabankSite_IMG}
+                image={everbankSite_IMG}
                 title="green iguana"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  TIAA Bank
+                  EverBank
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  TIAA Bank is an American online bank that provides personal
+                  EverBank Bank is an online bank that provides personal
                   banking, investing, and lending solutions for individuals and
-                  businesses. Its website, tiaabank.com, serves as a platform
+                  businesses. Its website, everbank.com, serves as a platform
                   for customers to access their accounts, manage their finances,
                   and apply for banking services.
                 </Typography>
               </CardContent>
               <CardActions>
                 <Button size="small">
-                  <a href="https://www.tiaabank.com/">TIAABANK.COM</a>
+                  <a href="https://www.everbank.com/">EverBank.com</a>
                 </Button>
               </CardActions>
             </Card>
           </Grid>
           <Grid item xs={12} lg={3}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345, height: "100%" }}>
               <CardMedia
                 sx={{ height: 176 }}
                 image={nuvodrawsSite_IMG}
@@ -70,15 +70,10 @@ export default function Projects() {
                   opportunities.
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Button size="small">
-                  <a href="http://austinneveau.com">Nuvodraws</a>
-                </Button>
-              </CardActions>
             </Card>
           </Grid>
           <Grid item xs={12} lg={3}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345, height: "100%" }}>
               <CardMedia
                 sx={{ height: 191 }}
                 image={leafsAdventure_IMG}
@@ -99,7 +94,7 @@ export default function Projects() {
             </Card>
           </Grid>
           <Grid item xs={12} lg={3}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345, height: "100%" }}>
               <CardMedia
                 sx={{ height: 191 }}
                 image={internal_IMG}
@@ -113,7 +108,7 @@ export default function Projects() {
                   A large number of the applications I have supported have been
                   internal applications. Most of these are .NET web services
                   that support the day to day business functionality. I've also
-                  worked internally with SQL Server, Split IO, Azure DevOps,
+                  worked internally with Netlify, OpenShift, SQL Server, Azure DevOps,
                   TFS, Git and more.
                 </Typography>
               </CardContent>

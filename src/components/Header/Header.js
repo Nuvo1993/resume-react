@@ -1,85 +1,74 @@
 import "./Header.css";
-import Grid from "@mui/material/Unstable_Grid2";
-import Paper from "@mui/material/Paper";
-import { styled } from "@mui/system";
-import { Typography } from "@mui/material";
-import Container from "@mui/material/Container";
+import { Typography, Container, Grid, Box, Avatar } from "@mui/material";
 import profilePic from "../../assets/images/DB9A0086.jpg";
 import { TagCloud } from "react-tagcloud";
+import { useTheme } from "@mui/material/styles";
 
 const data = [
   { value: ".NET Core", count: 45 },
   { value: "C#", count: 55 },
-  { value: "AWS", count: 5 },
-  { value: "Javascript", count: 25 },
-  { value: "Node.js", count: 20 },
-  { value: "Angular", count: 20 },
-  { value: "React", count: 25 },
+  { value: "AWS", count: 25 },
+  { value: "Javascript", count: 35 },
+  { value: "Node.js", count: 30 },
+  { value: "Angular", count: 30 },
+  { value: "React", count: 35 },
   { value: "NextJS", count: 35 },
   { value: "NPM", count: 30 },
-  { value: "SQL", count: 60 },
-  { value: "Git", count: 60 },
-  { value: "TFS", count: 60 },
-  { value: "TypeScript", count: 30 },
-  { value: "Jira", count: 20 },
-  { value: "Openshift", count: 15 },
-  { value: "GitHub Actions", count: 15 },
+  { value: "SQL", count: 50 },
+  { value: "Git", count: 50 },
+  { value: "TFS", count: 40 },
+  { value: "TypeScript", count: 40 },
+  { value: "Jira", count: 30 },
+  { value: "Openshift", count: 25 },
+  { value: "GitHub Actions", count: 25 },
 ];
-const options = {
-  luminosity: "light",
-  hue: "blue",
+
+const SimpleCloud = () => {
+  const theme = useTheme();
+  const options = {
+    luminosity: "dark",
+    hue: theme.palette.primary.main,
+  };
+  return <TagCloud minSize={16} maxSize={80} tags={data} colorOptions={options} />;
 };
 
-const SimpleCloud = () => (
-  <TagCloud minSize={12} maxSize={75} tags={data} colorOptions={options} />
-);
 export default function Header() {
+  const theme = useTheme();
   return (
-    <header className="App-header">
-      <Container maxWidth="xl">
-        <Paper className="header-wrapper" elevation={12}>
-          <Grid container spacing={1}>
-            <Grid item xs={12} lg={3}>
-              <div data-aos="fade-right" className="text">
-                <Typography variant="h3">
-                  Hello, <br /> I'm{" "}
-                  <span className="highlight">Austin Neveau</span>
-                  <br /> I'm a full-stack web developer.
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} lg={3}>
-              <div data-aos="fade-left" className="circle-container">
-                <img src={profilePic} alt="My Image" className="circle-image" />
-              </div>
-            </Grid>
-            <Grid item xs={12} lg={6}>
-              <SimpleCloud />
-            </Grid>
-            <Grid item xs={12} lg={6}>
-              <div data-aos="fade-up">
-                <Typography variant="h6">
-                  As a full-stack software developer, I possess a strong passion
-                  for learning and implementing new technologies. My ability to
-                  learn quickly and efficiently enables me to adapt to any
-                  project and deliver high-quality solutions. I am excited to
-                  work with like-minded individuals and contribute to the growth
-                  of any organization that values innovation, collaboration, and
-                  excellence.
-                </Typography>
-              </div>
-            </Grid>
+    <header className="App-header section" id="headerSection">
+      <Container maxWidth="lg">
+        <Grid container spacing={4} alignItems="center" justifyContent="center">
+          <Grid item xs={12} md={6}>
+            <Box data-aos="fade-right">
+              <Typography variant="h2" component="h1" gutterBottom>
+                Hello, I'm <br />
+                <span className="highlight">Austin Neveau</span>
+              </Typography>
+              <Typography variant="h5" component="h2" color="textSecondary" sx={{ mb: 3 }}>
+                I'm a full-stack web developer.
+              </Typography>
+              <Typography variant="body1" sx={{ mb: 3 }}>
+                As a full-stack software developer, I possess a strong passion
+                for learning and implementing new technologies. My ability to
+                learn quickly and efficiently enables me to adapt to any
+                project and deliver high-quality solutions.
+              </Typography>
+            </Box>
           </Grid>
-        </Paper>
+          <Grid item xs={12} md={6}>
+            <Box data-aos="fade-left" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+              <Avatar
+                src={profilePic}
+                alt="Austin Neveau"
+                sx={{ width: 250, height: 250, mb: 4, boxShadow: '0 8px 25px rgba(0,0,0,0.15)' }}
+              />
+              <Box sx={{ width: '100%' }}>
+                <SimpleCloud />
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
       </Container>
     </header>
   );
 }
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
