@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./Resume.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -54,7 +55,9 @@ function SkillChips({ icon, title, skills }) {
 }
 
 export default function Resume() {
-  AOS.init();
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const frontEndSkills = ["React", "Angular", "Typescript", "Javascript", "RxJS", "HTML", "CSS"];
   const backEndSkills = [
     "Node.js",
@@ -112,9 +115,11 @@ export default function Resume() {
           </Typography>
           <Timeline position={isMobile ? "right" : "alternate"}>
             <TimelineItem>
-              <TimelineOppositeContent color="text.secondary">
-                March 2021 - Present
-              </TimelineOppositeContent>
+              {!isMobile && (
+                <TimelineOppositeContent color="text.secondary">
+                  March 2021 - Present
+                </TimelineOppositeContent>
+              )}
               <TimelineSeparator>
                 <TimelineDot color="primary">
                   <WorkIcon />
@@ -125,21 +130,26 @@ export default function Resume() {
                 <Paper elevation={3} className="timeline-paper">
                   <Typography variant="h6">Lead Software Developer</Typography>
                   <Typography variant="subtitle1" gutterBottom>EverBank</Typography>
-                  <Typography variant="body2">
-                    - Coordinated weekly production deployments, reducing delays by 40%.<br />
-                    - Managed deployment pipeline with Netlify, reducing build times by 30%.<br />
-                    - Built internal content plugin, saving 5 hours of developer time per week on average.<br />
-                    - Mentored a team of 5 developers.<br />
-                    - Maintained critical OpenShift APIs with 99.8% uptime.<br />
-                    - Member of the Core AI team.
-                  </Typography>
+                  {isMobile && (
+                    <Typography variant="caption" color="text.secondary">March 2021 - Present</Typography>
+                  )}
+                  <ul className="timeline-list">
+                    <li>Coordinated weekly production deployments, reducing delays by 40%.</li>
+                    <li>Managed deployment pipeline with Netlify, reducing build times by 30%.</li>
+                    <li>Built internal content plugin, saving 5 hours of developer time per week on average.</li>
+                    <li>Mentored a team of 5 developers.</li>
+                    <li>Maintained critical OpenShift APIs with 99.8% uptime.</li>
+                    <li>Member of the Core AI team.</li>
+                  </ul>
                 </Paper>
               </TimelineContent>
             </TimelineItem>
             <TimelineItem>
-              <TimelineOppositeContent color="text.secondary">
-                March 2016 - March 2021
-              </TimelineOppositeContent>
+              {!isMobile && (
+                <TimelineOppositeContent color="text.secondary">
+                  March 2016 - March 2021
+                </TimelineOppositeContent>
+              )}
               <TimelineSeparator>
                 <TimelineDot color="primary">
                   <WorkIcon />
@@ -150,21 +160,26 @@ export default function Resume() {
                 <Paper elevation={3} className="timeline-paper">
                   <Typography variant="h6">Senior Software Developer</Typography>
                   <Typography variant="subtitle1" gutterBottom>TIAA Bank</Typography>
-                  <Typography variant="body2">
-                    - Experience with RESTful and SOAP APIs.<br />
-                    - Managed monthly releases for the client acquisition team.<br />
-                    - Designed SPA applications in .NET C# and Angular.<br />
-                    - Built multiple ETL pipelines.<br />
-                    - Triaged and resolved vulnerabilities using Veracode.<br />
-                    - Maintained 70% code coverage.
-                  </Typography>
+                  {isMobile && (
+                    <Typography variant="caption" color="text.secondary">March 2016 - March 2021</Typography>
+                  )}
+                  <ul className="timeline-list">
+                    <li>Experience with RESTful and SOAP APIs.</li>
+                    <li>Managed monthly releases for the client acquisition team.</li>
+                    <li>Designed SPA applications in .NET C# and Angular.</li>
+                    <li>Built multiple ETL pipelines.</li>
+                    <li>Triaged and resolved vulnerabilities using Veracode.</li>
+                    <li>Maintained 70% code coverage.</li>
+                  </ul>
                 </Paper>
               </TimelineContent>
             </TimelineItem>
             <TimelineItem>
-              <TimelineOppositeContent color="text.secondary">
-                August 2015 - March 2016
-              </TimelineOppositeContent>
+              {!isMobile && (
+                <TimelineOppositeContent color="text.secondary">
+                  August 2015 - March 2016
+                </TimelineOppositeContent>
+              )}
               <TimelineSeparator>
                 <TimelineDot color="primary">
                   <WorkIcon />
@@ -174,11 +189,14 @@ export default function Resume() {
                 <Paper elevation={3} className="timeline-paper">
                   <Typography variant="h6">QA Analyst</Typography>
                   <Typography variant="subtitle1" gutterBottom>EverBank</Typography>
-                  <Typography variant="body2">
-                    - Wrote and maintained test scripts, reducing production bugs by 40%.<br />
-                    - Built automated tests with Selenium, reducing manual testing time by 8 hours a week.<br />
-                    - Performed application testing and quality assurance.
-                  </Typography>
+                  {isMobile && (
+                    <Typography variant="caption" color="text.secondary">August 2015 - March 2016</Typography>
+                  )}
+                  <ul className="timeline-list">
+                    <li>Wrote and maintained test scripts, reducing production bugs by 40%.</li>
+                    <li>Built automated tests with Selenium, reducing manual testing time by 8 hours a week.</li>
+                    <li>Performed application testing and quality assurance.</li>
+                  </ul>
                 </Paper>
               </TimelineContent>
             </TimelineItem>
@@ -191,9 +209,11 @@ export default function Resume() {
           </Typography>
           <Timeline position={isMobile ? "right" : "alternate"}>
             <TimelineItem>
-              <TimelineOppositeContent color="text.secondary">
-                2015 - 2018
-              </TimelineOppositeContent>
+              {!isMobile && (
+                <TimelineOppositeContent color="text.secondary">
+                  2015 - 2018
+                </TimelineOppositeContent>
+              )}
               <TimelineSeparator>
                 <TimelineDot color="secondary">
                   <SchoolIcon />
@@ -204,14 +224,19 @@ export default function Resume() {
                 <Paper elevation={3} className="timeline-paper">
                   <Typography variant="h6">University of North Florida</Typography>
                   <Typography variant="subtitle1">B.S. Information Technology</Typography>
+                  {isMobile && (
+                    <Typography variant="caption" color="text.secondary">2015 - 2018</Typography>
+                  )}
                   <img src={unfLogo} alt="UNF Logo" className="school-logo" />
                 </Paper>
               </TimelineContent>
             </TimelineItem>
             <TimelineItem>
-              <TimelineOppositeContent color="text.secondary">
-                2012 - 2014
-              </TimelineOppositeContent>
+              {!isMobile && (
+                <TimelineOppositeContent color="text.secondary">
+                  2012 - 2014
+                </TimelineOppositeContent>
+              )}
               <TimelineSeparator>
                 <TimelineDot color="secondary">
                   <SchoolIcon />
@@ -221,6 +246,9 @@ export default function Resume() {
                 <Paper elevation={3} className="timeline-paper">
                   <Typography variant="h6">Florida State College of Jacksonville</Typography>
                   <Typography variant="subtitle1">A.A. Degree</Typography>
+                  {isMobile && (
+                    <Typography variant="caption" color="text.secondary">2012 - 2014</Typography>
+                  )}
                   <img src={fscjLogo} alt="FSCJ Logo" className="school-logo" />
                 </Paper>
               </TimelineContent>

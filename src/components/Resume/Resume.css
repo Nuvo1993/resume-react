@@ -25,7 +25,22 @@
   border-radius: 4px;
 }
 
+.timeline-list {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.timeline-list li {
+  margin-bottom: 4px;
+}
+
 @media (max-width: 600px) {
+  .MuiTimelineItem-root::before {
+    display: none;
+  }
+
   .timeline-paper {
     width: 100%;
   }
