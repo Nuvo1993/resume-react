@@ -101,7 +101,7 @@ export default function Projects() {
               </CardContent>
               <CardActions>
                 <Button size="small">
-                  <a href="https://www.app.recallis.com/">Recallis.com</a>
+                  <a href="https://www.recallis.com/">Recallis.com</a>
                 </Button>
               </CardActions>
             </Card>
